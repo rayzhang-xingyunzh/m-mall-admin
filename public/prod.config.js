@@ -1,3 +1,3 @@
 (function(window) {
-	window.api_base_url = '/api'
+	window.api_base_url = '/xyweappmall/api'
 })(window)
