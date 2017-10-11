@@ -1,7 +1,7 @@
 // Load plugins
 var webpack            = require('webpack'),                                             // webpack
     path               = require('path'),                                                // 路径
-    moment             = require('moment'),                                              // moment 
+    moment             = require('moment'),                                              // moment
     cssImport          = require("postcss-import"),                                      // import
     cssMixins          = require("postcss-mixins"),                                      // 函数
     cssExtend          = require("postcss-extend"),                                      // 继承
@@ -12,7 +12,7 @@ var webpack            = require('webpack'),                                    
     cssSimpleVars      = require("postcss-simple-vars"),                                 // 变量
     customMedia        = require("postcss-custom-media"),                                // media
     cssAtroot          = require("postcss-atroot"),                                      // atroot
-    sprites            = require('postcss-sprites'),                                     // sprites 
+    sprites            = require('postcss-sprites'),                                     // sprites
     ExtractTextPlugin  = require("extract-text-webpack-plugin"),                         // css打包
     HtmlWebpackPlugin  = require('html-webpack-plugin'),                                 // 生成HTML文件
     CopyWebpackPlugin  = require('copy-webpack-plugin'),                                 // 文件copy
@@ -43,7 +43,7 @@ var config = {
         vendor: [
             'moment',
             'angular',
-            'angular-i18n/angular-locale_ZH-CN.js',
+            'angular-i18n/angular-locale_zh-cn.js',
             'angular-ui-router',
             'oclazyload',
             'angular-animate',
@@ -71,10 +71,10 @@ var config = {
         // 清除文件
         new CleanWebpackPlugin(['build'], {
             root: '',
-            verbose: true, 
+            verbose: true,
             dry: false
         }),
-        
+
         // 文件copy
         new CopyWebpackPlugin([
             {
@@ -103,11 +103,11 @@ var config = {
         loaders: [
 
             // ES6转码
-            { 
-                test: /\.js$/, 
-                loader: 'babel', 
-                exclude: [path.resolve(__dirname, 'node_modules')], 
-                query: { 
+            {
+                test: /\.js$/,
+                loader: 'babel',
+                exclude: [path.resolve(__dirname, 'node_modules')],
+                query: {
                     compact: false,
                     presets: 'es2015',
                     plugins: [
@@ -118,8 +118,8 @@ var config = {
             },
 
             // .css 文件使用postcss来处理并打包
-            { 
-                test: /\.css$/, 
+            {
+                test: /\.css$/,
                 loader: ExtractTextPlugin.extract('style', 'css!postcss', {
                     publicPath: '../../'
                 })
@@ -178,7 +178,7 @@ var config = {
         root: [
             path.resolve(__dirname),
             path.resolve(__dirname, 'src/'),
-        ] 
+        ]
     }
 }
 
